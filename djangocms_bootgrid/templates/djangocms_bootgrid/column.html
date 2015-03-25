@@ -1,0 +1,8 @@
+{% load cms_tags %}
+<div class="{% if column.size_xs %}col-xs-{{ column.size_xs }}{% endif %}{% if column.size_sm %} col-sm-{{ column.size_sm }}{% endif %}{% if column.size_md %} col-md-{{ column.size_md }}{% endif %}{% if column.size_lg %} col-lg-{{ column.size_lg }}{% endif %}{% if column.custom_classes %} {{ column.custom_classes }}{% endif %}">
+{% for plugin in column.child_plugin_instances %}
+	{% render_plugin plugin %}
+{% empty %}
+&nbsp;
+{% endfor %}
+</div>
