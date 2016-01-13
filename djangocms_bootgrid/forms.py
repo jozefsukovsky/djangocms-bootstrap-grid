@@ -54,6 +54,7 @@ class GridColumnPluginForm(forms.ModelForm):
     
     class Meta:
         model = GridColumnBootstrap
+        fields = '__all__'
     
     def clean(self):
         data = super(GridColumnPluginForm, self).clean()
